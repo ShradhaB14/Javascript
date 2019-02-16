@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Meal Voter!!!</title>
+  </head>
+  <body>
+    <div id="app">React has not rendered yet!!</div>
+    <script type="text/babel">
+      let MealVoter = props => {
+        let mealStyle = {
+          display: "inline-block",
+          textAlign: "center",
+          margin: 20,
+          height: 500,
+          width: 300,
+          padding: 0,
+          backgroundColor: "#FFF",
+          WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+          filter: "drop-shadow(0px 0px 5px #555)"
+        };
+        return (
+          <div style={mealStyle}>
+            <Avatar img={props.img} />
+            <MealName name={props.name} />
+            <p> Vote here if you want this</p>
+            <VoteUp />
+            <p>Vote here if you do not want this</p>
+            <VoteDown />
+          </div>
+        );
+      };
+      let Avatar = props => {
+        let avatarStyle = {
+          height: 200,
+          width: 200,
+          marginTop: 20
+        };
+        return (
+          <img style={avatarStyle} src={props.img} alt="img did not load" />
+        );
+      };
+      let MealName = props => {
+        var nameStyle = {
+          fontSize: 24,
+          textAlign: "center",
+          fontFamily: "Arial, Helvetica, sans-serif",
+          margin: 20
+        };
+        return <h1 style={nameStyle}>{props.name}</h1>;
+      };
+      let VoteUp = () => {
+        return <button>+1</button>;
+      };
+      let Description = () => {
+        return <h4>Lorem Ipsum Dollor sit</h4>;
+      };
+      let VoteDown = () => {
+        return <button>-1</button>;
+      };
+
+      ReactDOM.render(
+        <div>
+          <MealVoter
+            img="https://static.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg"
+            name="Breakfast"
+          />
+          <MealVoter
+            img="https://static.pexels.com/photos/58722/pexels-photo-58722.jpeg"
+            name="Lunch"
+          />
+          <MealVoter
+            img="https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg"
+            name="Dinner"
+          />
+        </div>,
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
