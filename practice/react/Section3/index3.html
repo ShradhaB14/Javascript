@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <title>PROPS with class</title>
+    
+</head>
+<body>
+    <div id="app">React has not yet rendered !!</div>
+
+    <script type="text/babel">
+    
+    class FirstName extends React.Component{
+        render(){
+            let firstNameStyle={
+                backgroundColor:this.props.color,
+                height:200,
+                width:200
+            }
+            return(
+                <h2 style={firstNameStyle} >{this.props.fname}</h2>
+            )
+        }
+    }
+    class LastName extends React.Component{
+        render(){
+            let lastNameStyle={
+                backgroundColor:this.props.color,
+                height:200,
+                width:200 
+            }
+            return(
+                <h2 style={lastNameStyle}>{this.props.lname}</h2>
+            )
+        }
+    }
+
+    ReactDOM.render(<div><FirstName color="red" fname="Shradha" /><LastName  color="blue" lname="Bhandari" /></div>,document.getElementById("app"))
+    </script>
+</body>
+</html>

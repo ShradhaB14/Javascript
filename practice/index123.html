@@ -1,0 +1,60 @@
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+         <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <title>Profile Pic</title>
+         
+     </head>
+     <body>
+         <div id="app">React has not rendered yet !!</div>
+         <script type="text/babel">
+
+            var Friendly=()=>{
+            return
+            <div>
+                <Avatar />
+                <UserName />
+                <GetConnected />
+            </div>
+            
+            }
+
+            var Avatar=()=>{
+                return <img src="https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo_400x400.jpg " alt="No img rendered" />
+            }
+            var UserName=()=>{
+                return <h1>Profile name</h1>
+            }
+
+            var GetConnected=()=>{
+                return
+                <div>
+                    <Like/>
+                    <Share/>
+                    <Add/>
+                
+                </div>
+
+            }
+            var Like=()=>{
+                return <i className="fa fa-thumbs-o-up" aria-hidden="true" ></i>
+            } 
+
+            var Share=()=>{
+                return  <i className="fa fa-share" aria-hidden="true" ></i>
+            }
+            var Add=()=>{
+                return <i className="fa fa-users" aria-hidden="true" ></i>
+            }
+            ReactDOM.render(<Friendly />,document.getElementById("app"))
+            </script>
+     </body>
+     </html>
